@@ -30,3 +30,24 @@ Notes:
 The file `env.zsh` is added to git and copied when installing this config.
 
 The file `env-secret.zsh` is gitignored and should be created manually if needed (it will be copied as well).
+
+## Other utils
+
+This config uses a lot of external tools, here is a non exhaustive list:
+- fzf
+- bat
+- eza
+- mcfly
+- curlie
+- zoxide
+- gum
+- pgcli
+
+Here are some useful links for everything (also non exhaustive):
+- [Oh My Zsh](https://ohmyz.sh/)
+- [Pure prompt](https://github.com/sindresorhus/pure)
+- [ZSH Synthax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/tree/master)
+- [Modern Unix](https://github.com/ibraheemdev/modern-unix)
+- [Gum](https://github.com/charmbracelet/gum)
+- [Pgcli](https://www.pgcli.com/)
+
