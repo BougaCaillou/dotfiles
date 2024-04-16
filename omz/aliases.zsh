@@ -56,4 +56,3 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
 # McFly
 eval "$(mcfly init zsh)"
 
-alias testnew="echo \"This is a test alias\""
