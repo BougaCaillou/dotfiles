@@ -92,5 +92,3 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH;
 
-export NEWVERSION="This is good"
-
