@@ -18,6 +18,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 brew install pure
 
 # Apply this configuration
+cd omz
 zsh install.zsh
 ```
 

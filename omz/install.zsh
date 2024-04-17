@@ -6,8 +6,8 @@ if [ -f ~/.zshrc ]; then
   echo "Backup of .zshrc created at ~/.zshrc.bak"
 fi
 
-# Change this to the path where you installed omz
-OMZ_PATH=~/.oh-my-zsh
+# You may want to change this to where your oh-my-zsh is installed (you should normally not need to).
+OMZ_PATH=$ZSH
 
 # Custom files (will autoload with omz)
 cp ./aliases.zsh $OMZ_PATH/custom/aliases.zsh
