@@ -6,7 +6,7 @@ deltag () {
 
 # TMUX smart attach (requires my tmux config and scrits)
 ta () {
-  zsh "$TMUX_SESSIONS_PATH/ta.sh"
+  zsh "$TMUX_HOME/sessions/ta.zsh"
 }
 
 # git checkout search
