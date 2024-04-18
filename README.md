@@ -7,3 +7,4 @@ For installation of all dotfiles, refer to the individual README files in each d
 - [ZSH configuration](omz/README.md)
 - [TMUX configuration](tmux/README.md)
 - [NVIM configuration](nvim/README.md)
+- [Homebrew leaves](homebrew/leaves)
