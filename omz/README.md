@@ -24,7 +24,7 @@ zsh install.zsh
 
 Notes:
 - Any existing `.zshrc` file will be backed up as `.zshrc.bak` before being replaced.
-- This installation does not handle [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/tree/master) which is very cool to have.
+- This installation does not handle custom plugins, you will have to add them manually (refer to the instructions of each plugins).
 
 ## ENV files
 
