@@ -143,7 +143,6 @@ mpbt () {
 
 # Prints the currently linked Synapse package
 links() {
-  echo "New version of links function"
   packages=$(\ls -Gl node_modules/@synapse-medicine) 2> /dev/null
 
   # Handling "not found" error by using $?
