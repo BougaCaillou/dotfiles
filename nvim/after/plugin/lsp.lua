@@ -23,7 +23,7 @@ mason_lspconfig.setup({
     'eslint',
     'html',
     'efm',
-    -- 'jdtls',
+    'jdtls',
     'jsonls',
     'lua_ls',
     'sqlls',
