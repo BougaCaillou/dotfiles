@@ -180,6 +180,9 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Git blame
+  use { 'f-person/git-blame.nvim' }
+
   -- ALL COLORSCHEMES --
 
   use { 'sainnhe/sonokai', as = 'sonokai' }
