@@ -23,8 +23,8 @@ mason_lspconfig.setup({
     'eslint',
     'html',
     'efm',
-    'jdtls',
     'jsonls',
+    'jdtls',
     'lua_ls',
     'sqlls',
     'tsserver',
@@ -32,6 +32,9 @@ mason_lspconfig.setup({
     'yamlls',
   },
 })
+
+-- Java setup
+require('java').setup()
 
 -- LSP signature help
 require('lsp_signature').setup({
@@ -111,6 +114,13 @@ lspconfig.tsserver.setup({
   filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
 })
 
+-- Setup jdtls
+lspconfig.jdtls.setup({
+  on_attach = lsp_attach,
+  capabilities = lsp_capabilities,
+  root_dir = lspconfig.util.root_pattern('pom.xml', 'gradle.build', '.git'),
+})
+
 -- Autocompletion setup
 local luasnip = require('luasnip')
 luasnip.config.setup({})
@@ -173,6 +183,4 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   },
 })
-
-lspconfig.jdtls.setup({})
 
