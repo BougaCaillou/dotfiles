@@ -55,6 +55,14 @@ return require('packer').startup(function(use)
   -- Mason (managing lsp servers)
   use {
     "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup({
+        registries = {
+          'github:nvim-java/mason-registry',
+          'github:mason-org/mason-registry',
+        }
+      })
+    end,
     run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
 
@@ -162,6 +170,7 @@ return require('packer').startup(function(use)
       'nvim-java/nvim-java-core',
       'nvim-java/nvim-java-test',
       'nvim-java/nvim-java-dap',
+      'nvim-java/nvim-java-refactor',
       'MunifTanjim/nui.nvim',
       'neovim/nvim-lspconfig',
       'mfussenegger/nvim-dap',
