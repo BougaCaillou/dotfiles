@@ -43,3 +43,13 @@ vim.opt.colorcolumn = '120'
 -- Number of fold columns visible (to help keeping track of folds)
 vim.opt.foldcolumn = '1'
 
+-- Setting list chars
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = '» ',
+  trail = '·',
+  lead = ' ',
+  extends = '>',
+  precedes = '<',
+  nbsp = '␣',
+}
