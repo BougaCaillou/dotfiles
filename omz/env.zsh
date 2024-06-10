@@ -4,8 +4,8 @@ PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin";
 # Add `~/bin` to the `$PATH`
 PATH="$HOME/bin:$PATH";
 
-# Add python 3.8 bin folder to path
-PATH="$HOME/Library/Python/3.8/bin:$PATH";
+# Add python 3.9 bin folder to path
+PATH="$HOME/Library/Python/3.9/bin:$PATH";
 
 # ADD Ruby
 PATH="/usr/local/opt/ruby/bin:$PATH"
