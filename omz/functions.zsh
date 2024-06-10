@@ -169,3 +169,19 @@ links() {
   done
 }
 
+# Function to vi into whatever using which
+see() {
+  if [[ $# -ne 1 ]]; then
+    echo "USAGE: see <command>"
+    return 1
+  fi
+
+  which $1 > /dev/null
+  if [[ $? -ne 0 ]]; then
+    echo "Command '$1' not found"
+    return 2
+  fi
+
+  $EDITOR $(which $1)
+}
+
