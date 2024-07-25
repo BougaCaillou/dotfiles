@@ -18,7 +18,6 @@ alias ls='eza -lh --git --icons --no-user'
 alias lst='eza -lh --git --icons --no-user --tree'
 alias lsat='eza -lh --git --icons --no-user --tree --all'
 alias ez='exec zsh'
-alias gccb="echo -n $(gb | rg '\*' | cut -d ' ' -f 2) | pbcopy"
 
 # Aliases to manage project (mostly make commands)
 alias mc="make clean"

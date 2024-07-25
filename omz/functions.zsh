@@ -185,3 +185,7 @@ see() {
   $EDITOR $(which $1)
 }
 
+gccb() {
+  echo -n $(gb | rg '\*' | cut -d ' ' -f 2) | pbcopy
+}
+
