@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
     config = function()
       require("mason").setup({
         registries = {
-          'github:nvim-java/mason-registry',
+          -- 'github:nvim-java/mason-registry',
           'github:mason-org/mason-registry',
         }
       })
@@ -163,22 +163,22 @@ return require('packer').startup(function(use)
   }
 
   -- NVIM java
-  use {
-    'nvim-java/nvim-java',
-    requires = {
-      'nvim-java/lua-async-await',
-      'nvim-java/nvim-java-core',
-      'nvim-java/nvim-java-test',
-      'nvim-java/nvim-java-dap',
-      'nvim-java/nvim-java-refactor',
-      'MunifTanjim/nui.nvim',
-      'neovim/nvim-lspconfig',
-      'mfussenegger/nvim-dap',
-      config = function()
-        require('java').setup()
-      end
-    }
-  }
+  -- use {
+  --   'nvim-java/nvim-java',
+  --   requires = {
+  --     'nvim-java/lua-async-await',
+  --     'nvim-java/nvim-java-core',
+  --     'nvim-java/nvim-java-test',
+  --     'nvim-java/nvim-java-dap',
+  --     'nvim-java/nvim-java-refactor',
+  --     'MunifTanjim/nui.nvim',
+  --     'neovim/nvim-lspconfig',
+  --     'mfussenegger/nvim-dap',
+  --     config = function()
+  --       require('java').setup()
+  --     end
+  --   }
+  -- }
 
   -- Git blame
   use { 'f-person/git-blame.nvim' }
