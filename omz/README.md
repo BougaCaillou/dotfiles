@@ -17,20 +17,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Install pure prompt
 brew install pure
 
-# Apply this configuration
-cd omz
-zsh install.zsh
+# To apply this conf, use the symlink command found in the README
 ```
 
 Notes:
-- Any existing `.zshrc` file will be backed up as `.zshrc.bak` before being replaced.
 - This installation does not handle custom plugins, you will have to add them manually (refer to the instructions of each plugins).
 
 ## ENV files
 
-The file `env.zsh` is added to git and copied when installing this config.
+The file `env.zsh` is tracked by git.
 
-The file `env-secret.zsh` is gitignored and should be created manually if needed (it will be copied as well).
+The file `env-secret.zsh` is gitignored and should be created manually if needed, in the `custom` directory.
+This way, you can link the entire `custom` directory to `~/.oh-my-zsh/custom/`.
 
 ## Other utils
 
