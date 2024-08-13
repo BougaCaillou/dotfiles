@@ -19,16 +19,6 @@ path() {
 	echo $PATH | tr ':' '\n'
 }
 
-# Smart "yarn link"
-yl () {
-  if [ $# -eq 0 ]
-  then
-    yarn link
-  else
-    yarn link "@synapse-medicine/$1"
-  fi
-}
-
 # "pgcli local", aka connect to local postgres
 pgcl () {
   pgcli postgres://postgres:$PGPWDL@localhost:5432/postgres
@@ -48,27 +38,6 @@ psqll () {
   fi
 
   PGPASSWORD=$PGPWDL psql -h localhost -p 5432 -U postgres postgres -f $1
-}
-
-# "pgcli test", aka connect to test postgres
-pgct () {
-  pgcli postgres://usermanagement:$PGPWDT@localhost:39021/usermanagement
-}
-
-# "psql test", aka execute a sql script on test postgres
-psqlt () {
-  if [[ $# -ne 1 ]]; then
-    echo "USAGE: psqlt file.sql"
-    return 1
-  fi
-
-  find $1 2>/dev/null
-  if [[ $? -ne 0 ]]; then
-    echo "Error while trying to read sql script '$1'"
-    return 2
-  fi
-
-  PGPASSWORD=$PGPWDT psql -h localhost -p 39021 -U usermanagement usermanagement -f $1
 }
 
 # Out the curren week number
@@ -139,34 +108,6 @@ mpb () {
 mpbt () {
   make prepare
   make build-test
-}
-
-# Prints the currently linked Synapse package
-links() {
-  packages=$(\ls -Gl node_modules/@synapse-medicine) 2> /dev/null
-
-  # Handling "not found" error by using $?
-  # File not found would return non 0 code
-  if [[ $? -ne 0 ]]; then
-    echo "Error: node_modules/@synapse-medicine not found."
-    echo "Either install packages by running npm install or you are not currently in a Synapse project"
-    return 1
-  fi
-
-  # Filtering strings that do not have "->" (sign of an active link)
-  linked="$(echo $packages | grep "\->" | xargs)"
-  if [[ "$(echo $linked | wc -c)" -eq 1 ]]; then
-    echo "No packages are linked right now"
-    return 0
-  fi
-
-  echo "Linked packages:"
-  for i in $(\ls -G node_modules/@synapse-medicine)
-  do
-    if [[ $linked == *"$i"* ]]; then
-      echo "- $i"
-    fi
-  done
 }
 
 # Function to vi into whatever using which
