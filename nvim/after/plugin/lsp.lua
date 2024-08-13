@@ -34,7 +34,7 @@ mason_lspconfig.setup({
 })
 
 -- Java setup
-require('java').setup()
+-- require('java').setup()
 
 -- LSP signature help
 require('lsp_signature').setup({
