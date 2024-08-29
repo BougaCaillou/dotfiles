@@ -183,6 +183,21 @@ return require('packer').startup(function(use)
   -- Git blame
   use { 'f-person/git-blame.nvim' }
 
+  -- nvim dap vscode
+  use {
+    'mxsdev/nvim-dap-vscode-js',
+    requires = {
+      'mfussenegger/nvim-dap',
+    }
+  }
+
+  -- vscode js debug
+  use {
+    'microsoft/vscode-js-debug',
+    opt = true,
+    run = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+  }
+
   -- ALL COLORSCHEMES --
 
   use { 'sainnhe/sonokai', as = 'sonokai' }
