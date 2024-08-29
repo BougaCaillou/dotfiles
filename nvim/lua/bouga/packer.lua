@@ -96,11 +96,11 @@ return require('packer').startup(function(use)
   -- Autoclose backets and stuff...
   use { 'm4xshen/autoclose.nvim' }
 
+  -- Component library (used by other plugins)
+  use { 'MunifTanjim/nui.nvim' }
+
   -- Code action menu (better than lsp's one)
-  use {
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu',
-  }
+  use { 'aznhe21/actions-preview.nvim' }
 
   -- Copilot the bro
   use { 'github/copilot.vim' }
