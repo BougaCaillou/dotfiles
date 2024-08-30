@@ -10,18 +10,22 @@ require("actions-preview").setup {
   -- disabled by defalt, must be set by yourself
   highlight_command = {
     -- require("actions-preview.highlight").delta(),
-    -- require("actions-preview.highlight").diff_so_fancy(),
-    -- require("actions-preview.highlight").diff_highlight(),
   },
 
   -- priority list of preferred backend
-  backend = { "nui" },
+  backend = { "telescope", "nui" },
 
   -- options related to telescope.nvim
   telescope = vim.tbl_extend(
     "force",
     -- telescope theme: https://github.com/nvim-telescope/telescope.nvim#themes
-    require("telescope.themes").get_dropdown(),
+    require("telescope.themes").get_cursor {
+      previewer = false,
+      layout_config = {
+        width = 100,
+        height = 20,
+      },
+    },
     -- a table for customizing content
     {
       -- a function to make a table containing the values to be displayed.
