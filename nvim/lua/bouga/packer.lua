@@ -35,12 +35,7 @@ return require('packer').startup(function(use)
   }
 
   -- Treesitter context (show context of the cursor, like VS Code "sticky" context)
-  use {
-    'nvim-treesitter/nvim-treesitter-context',
-    config = function()
-      require('treesitter-context').setup()
-    end
-  }
+  use { 'nvim-treesitter/nvim-treesitter-context' }
 
   -- Treesitter rainbow (colorize brackets and stuff)
   use { 'HiPhish/rainbow-delimiters.nvim' }

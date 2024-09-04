@@ -73,3 +73,9 @@ vim.g.rainbow_delimiters = {
   },
 }
 
+-- Treesitter context configuration
+require('treesitter-context').setup {
+  enable = true,
+  multiline_threshold = 5,
+}
+
