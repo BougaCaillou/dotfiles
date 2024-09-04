@@ -135,3 +135,7 @@ vim.keymap.set('n', '<C-l>', '<Cmd>NvimTmuxNavigateRight<CR>')
 vim.keymap.set('n', '<C-k>', '<Cmd>NvimTmuxNavigateUp<CR>')
 vim.keymap.set('n', '<C-j>', '<Cmd>NvimTmuxNavigateDown<CR>')
 
+-- Go to previous/next position with centering
+vim.keymap.set('n', '<C-o>', "<C-o>zz")
+vim.keymap.set('n', '<C-i>', "<C-i>zz")
+
