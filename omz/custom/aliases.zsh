@@ -37,6 +37,18 @@ alias mpsh="make publish"
 alias mpsht="make publish-test"
 alias mtr="meteor"
 
+# Extra alias for npm and yarn
+alias n="npm"
+alias ni="npm install"
+alias nis="npm install --save"
+alias nid="npm install --save-dev"
+alias nu="npm uninstall"
+alias nr="npm run"
+alias y="yarn"
+alias yi="yarn add"
+alias yis="yarn add --dev"
+alias yr="yarn remove"
+
 # conventional commits reminder
 alias cc="echo \"feat: A new feature
 fix: A bug fix
