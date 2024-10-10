@@ -189,3 +189,8 @@ gccb() {
   echo -n $(gb | rg '\*' | cut -d ' ' -f 2) | pbcopy
 }
 
+# Prints a local postgresql connection string
+ldb() {
+  echo "postgres://postgres:$PGPWDL@localhost:5432/postgres"
+}
+
