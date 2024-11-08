@@ -90,5 +90,11 @@ export PROJECTS_DIR="$HOME/Documents"
 # Setting XDG directories
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# Adding stuff for nix darwin
+PATH="/run/current-system/sw/bin:$PATH"
+
+# Nix darwin flake path
+export NIX_CONF_DIR="$HOME/Documents/dotfiles/nix-darwin"
+
 export PATH;
 
