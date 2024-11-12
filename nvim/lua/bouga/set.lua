@@ -26,10 +26,10 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Colors i guess
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 -- Scroll off = space always visible when scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
 -- ??
 vim.opt.signcolumn = 'yes'
