@@ -135,3 +135,6 @@ ldb() {
   echo "postgres://postgres:$PGPWDL@localhost:5432/postgres"
 }
 
+v () {
+  [ -z "$1" ] && nvim . || nvim $1
+}
