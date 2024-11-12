@@ -24,18 +24,14 @@ end
 function ColorWithCatppuccin()
   require('catppuccin').setup({
     flavour = 'macchiato',
-    transparent_background = false,
-    styles = {
-      comments = { 'italic' },
-      functions = { 'italic' },
-    },
+    transparent_background = true,
     integrations = {
       telescope = {
         enabled = true,
         style = "nvchad",
       },
       nvimtree = {
-        enabled = false,
+        enabled = true,
       },
       which_key = true,
     },
