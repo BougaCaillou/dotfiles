@@ -1,5 +1,5 @@
 {
-  description = "Example Darwin system flake";
+  description = "Example nix-darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -54,9 +54,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#MacBook-Pro-de-Pierre
     darwinConfigurations."MacBook-Pro-de-Pierre" = nix-darwin.lib.darwinSystem {
-      modules = [
-        configuration
-      ];
+      modules = [ configuration ];
     };
 
     # Expose the package set, including overlays, for convenience.

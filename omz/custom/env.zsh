@@ -1,6 +1,9 @@
 # PATH
 PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin";
 
+# Dotfiles home directory
+export DOTFILES="$HOME/Documents/dotfiles"
+
 # Add `~/bin` to the `$PATH`
 PATH="$HOME/bin:$PATH";
 
@@ -94,7 +97,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 PATH="/run/current-system/sw/bin:$PATH"
 
 # Nix darwin flake path
-export NIX_CONF_DIR="$HOME/Documents/dotfiles/nix-darwin"
+export NIX_CONF_DIR="$DOTFILES/nix-darwin"
 
 export PATH;
 
