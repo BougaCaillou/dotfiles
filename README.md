@@ -30,3 +30,12 @@ ln -s ~/repos/dotfiles/omz/custom/* ~/.oh-my-zsh/custom/
 # (using * like the previous line does not work because custom plugins are directories)
 for i in `\ls -d -1 ~/repos/dotfiles/omz/plugins/*`; do ln -s $i ~/.oh-my-zsh/custom/plugins/$(echo $i | rev | cut -d "/" -f 1 | rev); done
 ```
+
+## TODO
+
+- Nix home manager
+- Fish shell
+- Starship prompt
+- Nu shell
+- Tmux yank
+- Add other configurations i might have forgotten (recently added bat and wezterm for example)
