@@ -27,7 +27,7 @@ mason_lspconfig.setup({
     'jdtls',
     'lua_ls',
     'sqlls',
-    'tsserver',
+    'ts_ls',
     'vimls',
     'yamlls',
   },
@@ -77,12 +77,12 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 )
 
 -- Setup all installed servers
-local get_servers = mason_lspconfig.get_installed_servers
-for _, server_name in ipairs(get_servers()) do
-  lspconfig[server_name].setup({
-    capabilities = lsp_capabilities,
-  })
-end
+-- local get_servers = mason_lspconfig.get_installed_servers
+-- for _, server_name in ipairs(get_servers()) do
+--   lspconfig[server_name].setup({
+--     capabilities = lsp_capabilities,
+--   })
+-- end
 
 -- Setup lua_ls
 lspconfig.lua_ls.setup({
@@ -108,7 +108,7 @@ lspconfig.lua_ls.setup({
 })
 
 -- Setup tsserver
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = lsp_attach,
   capabilities = lsp_capabilities,
   filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
