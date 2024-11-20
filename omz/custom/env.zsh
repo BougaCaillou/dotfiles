@@ -99,5 +99,8 @@ PATH="/run/current-system/sw/bin:$PATH"
 # Nix darwin flake path
 export NIX_CONF_DIR="$DOTFILES/nix-darwin"
 
+# asdf stuff
+export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
+
 export PATH;
 
