@@ -16,7 +16,6 @@ mason_lspconfig.setup({
     underline = true,
   },
   ensure_installed = {
-    'cmake',
     'cssls',
     'docker_compose_language_service',
     'dockerls',

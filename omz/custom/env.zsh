@@ -4,11 +4,8 @@ PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin";
 # Dotfiles home directory
 export DOTFILES="$HOME/Documents/dotfiles"
 
-# Add `~/bin` to the `$PATH`
-PATH="$HOME/bin:$PATH";
-
-# Add python 3.9 bin folder to path
-PATH="$HOME/Library/Python/3.9/bin:$PATH";
+# Oh youi got me some BINs
+PATH="$HOME/bin:$HOME/.yarn/bin:$PATH";
 
 # ADD Ruby
 PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -17,36 +14,6 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 # Preffered editor for broot
 export EDITOR=nvim
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-
-# This loads nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-# This loads nvm bash completion
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Widget demo page
 export PUBLIC_SYNAPSE_WIDGET_URL=http://localhost:8080
@@ -63,7 +30,7 @@ PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/tools:$ANDROID_HOME/t
 export JAVA_ROOT=/Library/Java/JavaVirtualMachines
 
 # libpq (postgre dump  and restore utilities)
-PATH="/usr/local/opt/libpq/bin:$PATH"
+PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
 # Postgresql env vars
 export PGPWDL='mysecretpassword'
