@@ -2,10 +2,10 @@
 PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin";
 
 # Dotfiles home directory
-export DOTFILES="$HOME/Documents/dotfiles"
+export DOTFILES="$HOME/repos/dotfiles"
 
-# Oh youi got me some BINs
-PATH="$HOME/bin:$HOME/.yarn/bin:$PATH";
+# Oh you got me some BINs
+PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/repos/REDACTED_TOOLING/bin:$HOME/python-venv/bin:$PATH";
 
 # ADD Ruby
 PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -42,20 +42,16 @@ PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/custom-tools:$PATH"
 
 # REDACTED_TOOLING bin
-PATH="$HOME/Documents/REDACTED_TOOLING/bin:$PATH"
-PATH="$HOME/Documents/REDACTED_TOOLING/user-auth:$PATH"
+PATH="$HOME/repos/REDACTED_TOOLING/bin:$PATH"
 
 # Local bin directory
 PATH="$HOME/.local/bin:$PATH"
-
-# Trying out WezTerm
-PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 
 # TMUX home directory
 export TMUX_HOME="$HOME/.config/tmux"
 
 # Main projects directory (where all the projects are cloned)
-export PROJECTS_DIR="$HOME/Documents"
+export PROJECTS_DIR="$HOME/repos"
 
 # Setting XDG directories
 export XDG_CONFIG_HOME="$HOME/.config"
