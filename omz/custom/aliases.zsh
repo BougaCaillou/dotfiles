@@ -33,7 +33,6 @@ alias mdv="make dev"
 alias mw="make watch"
 alias mpsh="make publish"
 alias mpsht="make publish-test"
-alias mtr="meteor"
 
 # Extra alias for npm and yarn
 alias n="npm"
@@ -64,7 +63,4 @@ eval "$(zoxide init zsh)"
 
 # FZF
 alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
-
-# McFly
-eval "$(mcfly init zsh)"
 
