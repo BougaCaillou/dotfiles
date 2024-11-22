@@ -58,9 +58,6 @@ chore: Changes to the build process or auxiliary tools and libraries such as doc
 ci: Changes to our CI configuration files and scripts
 build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)\""
 
-# Zoxide
-eval "$(zoxide init zsh)"
-
 # FZF
 alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
 
