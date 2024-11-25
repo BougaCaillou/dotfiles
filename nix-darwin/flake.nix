@@ -34,7 +34,7 @@
       system.stateVersion = 5;
 
       # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "x86_64-darwin";
+      nixpkgs.hostPlatform = "aarch64-darwin";
 
       security.pam.enableSudoTouchIdAuth = true;
 
@@ -52,12 +52,12 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#MacBook-Pro-de-Pierre
-    darwinConfigurations."MacBook-Pro-de-Pierre" = nix-darwin.lib.darwinSystem {
+    # $ darwin-rebuild build --flake .#MacBook-Air-de-Pierre
+    darwinConfigurations."MacBook-Air-de-Pierre" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."MacBook-Pro-de-Pierre".pkgs;
+    darwinPackages = self.darwinConfigurations."MacBook-Air-de-Pierre".pkgs;
   };
 }
