@@ -1,7 +1,5 @@
 asdf
-broot
 cantino/mcfly/mcfly
-cowsay
 curlie
 derailed/k9s/k9s
 dust
@@ -11,8 +9,8 @@ fd
 fzf
 git
 glow
+gnu-sed
 go
-gtop
 gum
 helmfile
 jq
@@ -20,7 +18,6 @@ kubectx
 lolcat
 make
 neovim
-nvm
 pgcli
 postgresql@17
 procs
