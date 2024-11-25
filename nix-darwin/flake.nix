@@ -46,7 +46,37 @@
 
       homebrew.enable = true;
       homebrew.brews = [
+        "asdf"
+        "cantino/mcfly/mcfly"
+        "curlie"
+        "derailed/k9s/k9s"
         "dust"
+        "eth-p/software/bat-extras"
+        "eza"
+        "fd"
+        "fzf"
+        "git"
+        "gnu-sed"
+        "glow"
+        "go"
+        "gum"
+        "helmfile"
+        "jq"
+        "kubectx"
+        "lolcat" # of course
+        "make"
+        "neovim"
+        "pgcli"
+        "postgresql@17"
+        "procs"
+        "starship"
+        "tldr"
+        "tmux"
+        "tree"
+        "zoxide"
+        "zsh-autosuggestions"
+        "zsh-syntax-highlighting"
+        "zx"
       ];
     };
   in
