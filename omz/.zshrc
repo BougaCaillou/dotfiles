@@ -72,10 +72,6 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git kubectl docker helm aliases asdf web-search)
 
-# ZSH plugins sourcing
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -121,3 +117,8 @@ eval "$(starship init zsh)"
 
 # Zoxide setup
 eval "$(zoxide init zsh)"
+
+# ZSH plugins sourcing
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
