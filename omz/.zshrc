@@ -100,9 +100,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# asdf shenanigans
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -121,4 +118,7 @@ eval "$(zoxide init zsh)"
 # ZSH plugins sourcing
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# asdf shenanigans
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
