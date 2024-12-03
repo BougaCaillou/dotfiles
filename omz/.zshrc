@@ -104,6 +104,7 @@ export LANG=en_US.UTF-8
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
+source /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh
 # End Nix
 
 # Homebrew stuff
