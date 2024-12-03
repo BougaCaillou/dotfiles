@@ -189,11 +189,18 @@ gccb() {
   echo -n $(gb | rg '\*' | cut -d ' ' -f 2) | pbcopy
 }
 
-# Prints a local postgresql connection string
+# Prints a local postgresql connection string (useful when using mermerd to generate erd diagrams)
 ldb() {
   echo "postgres://postgres:$PGPWDL@localhost:5432/postgres"
 }
 
-v () {
+v() {
   [ -z "$1" ] && nvim . || nvim $1
 }
+
+# Rebuild nix profile based on my flake
+rebuild() {
+  darwin-rebuild switch --flake $DOTFILES/nix-darwin
+  exec zsh
+}
+
