@@ -3,15 +3,17 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -99,7 +101,7 @@
       ];
     };
 
-    imports = [ <home-manager/nix-darwin> ];
+    # imports = [ <home-manager/nix-darwin> ];
 
     # Expose the package set, including overlays, for convenience.
     darwinPackages = self.darwinConfigurations."MacBook-Air-de-Pierre".pkgs;
