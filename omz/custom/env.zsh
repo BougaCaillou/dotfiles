@@ -66,5 +66,7 @@ PATH="/nix/var/nix/profiles/default/bin:$PATH"
 # asdf stuff
 export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
+PATH="$HOME/.meteor:$PATH"
+
 export PATH;
 
