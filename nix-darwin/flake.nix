@@ -18,8 +18,38 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
+      # Package search: https://search.nixos.org/packages?channel=24.11&from=0&size=50&sort=relevance&type=packages
       environment.systemPackages = [
         pkgs.vim
+        pkgs.stow
+        pkgs.mcfly
+        pkgs.curlie
+        pkgs.k9s
+        pkgs.dust
+        pkgs.eza
+        pkgs.fd
+        pkgs.fzf
+        pkgs.git
+        pkgs.gnused
+        pkgs.glow
+        pkgs.go
+        pkgs.gum
+        pkgs.helmfile
+        pkgs.jq
+        pkgs.kubectx
+        pkgs.lolcat # of course
+        pkgs.gnumake
+        pkgs.neovim
+        pkgs.pgcli
+        pkgs.procs
+        pkgs.starship
+        pkgs.tldr
+        pkgs.tmux
+        pkgs.tree
+        pkgs.zoxide
+        pkgs.zsh-autosuggestions
+        pkgs.zsh-syntax-highlighting
+        pkgs.zx
       ];
 
       # Auto upgrade nix package and the daemon service.
@@ -53,36 +83,8 @@
       homebrew.enable = true;
       homebrew.brews = [
         "asdf"
-        "cantino/mcfly/mcfly"
-        "curlie"
-        "derailed/k9s/k9s"
-        "dust"
         "eth-p/software/bat-extras"
-        "eza"
-        "fd"
-        "fzf"
-        "git"
-        "gnu-sed"
-        "glow"
-        "go"
-        "gum"
-        "helmfile"
-        "jq"
-        "kubectx"
-        "lolcat" # of course
-        "make"
-        "neovim"
-        "pgcli"
         "postgresql@17"
-        "procs"
-        "starship"
-        "tldr"
-        "tmux"
-        "tree"
-        "zoxide"
-        "zsh-autosuggestions"
-        "zsh-syntax-highlighting"
-        "zx"
       ];
     };
   in
