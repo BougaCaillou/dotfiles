@@ -11,7 +11,6 @@ alias hf="helmfile"
 alias hfd="helmfile diff"
 alias hfa="helmfile apply"
 alias cl="curlie"
-alias make="gmake"
 alias ls='eza -lh --git --icons --no-user'
 alias lst='eza -lh --git --icons --no-user --tree'
 alias lsat='eza -lh --git --icons --no-user --tree --all'

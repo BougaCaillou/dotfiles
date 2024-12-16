@@ -104,7 +104,6 @@ export LANG=en_US.UTF-8
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
-source /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh
 # End Nix
 
 # Homebrew stuff
@@ -121,5 +120,5 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # asdf shenanigans
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
 
