@@ -7,10 +7,6 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
@@ -94,16 +90,8 @@
     darwinConfigurations."MacBook-Air-de-Pierre" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-        home-manager.darwinModules.home-manager {
-          users.users.pierre.home = "/Users/pierre";
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.pierre = import ./home.nix;
-        }
       ];
     };
-
-    # imports = [ <home-manager/nix-darwin> ];
 
     # Expose the package set, including overlays, for convenience.
     darwinPackages = self.darwinConfigurations."MacBook-Air-de-Pierre".pkgs;
