@@ -33,9 +33,8 @@ for i in `\ls -d -1 ~/repos/dotfiles/omz/plugins/*`; do ln -s $i ~/.oh-my-zsh/cu
 
 ## TODO
 
-- Nix home manager
+- Stow
 - Fish shell
-- Starship prompt
 - Nu shell
 - Tmux yank
 - Add other configurations i might have forgotten (recently added bat and wezterm for example)
