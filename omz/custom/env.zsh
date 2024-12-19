@@ -24,17 +24,15 @@ PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/tools:$ANDROID_HOME/t
 
 export JAVA_ROOT=/Library/Java/JavaVirtualMachines
 
-# libpq (postgre dump  and restore utilities)
+# libpq (postgre utils)
 PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-
-# Postgresql env vars
-export PGPWDL='mysecretpassword'
 
 PATH="$HOME/.cargo/bin:$PATH"
 
 # Custom tools (one ofs, i.e. Mermerd...)
 PATH="$HOME/custom-tools:$PATH"
 
+# Kubernetes tooling from Synapse \o/
 PATH="$HOME/repos/kubernetes-tooling/bin:$PATH"
 
 PATH="$HOME/.local/bin:$PATH"
