@@ -21,7 +21,7 @@ path() {
 
 # "pgcli local", aka connect to local postgres
 pgcl () {
-  pgcli postgres://postgres:$PGPWDL@localhost:5432/postgres
+  pgcli postgres://postgres:mysecretpassword@localhost:5432/postgres
 }
 
 # "psql local", aka execute a sql script on local postgres
@@ -37,7 +37,7 @@ psqll () {
     return 2
   fi
 
-  PGPASSWORD=$PGPWDL psql -h localhost -p 5432 -U postgres postgres -f $1
+  psql postgres://postgres:mysecretpassword@localhost:5432/postgres -f $1
 }
 
 # Out the curren week number
@@ -132,7 +132,7 @@ gccb() {
 
 # Prints a local postgresql connection string (useful when using mermerd to generate erd diagrams)
 ldb() {
-  echo "postgres://postgres:$PGPWDL@localhost:5432/postgres"
+  echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
 }
 
 v() {

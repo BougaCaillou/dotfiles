@@ -3,7 +3,7 @@ PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin";
 export DOTFILES="$HOME/repos/dotfiles"
 
 # Oh you got me some BINs
-PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/repos/REDACTED_TOOLING/bin:$HOME/python-venv/bin:$PATH";
+PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/python-venv/bin:$PATH";
 
 PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
@@ -24,19 +24,13 @@ PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/tools:$ANDROID_HOME/t
 
 export JAVA_ROOT=/Library/Java/JavaVirtualMachines
 
-# libpq (postgre dump  and restore utilities)
+# libpq (postgre utils)
 PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-
-# Postgresql env vars
-export PGPWDL='mysecretpassword'
 
 PATH="$HOME/.cargo/bin:$PATH"
 
 # Custom tools (one ofs, i.e. Mermerd...)
 PATH="$HOME/custom-tools:$PATH"
-
-PATH="$HOME/repos/REDACTED_TOOLING/bin:$PATH"
-
 PATH="$HOME/.local/bin:$PATH"
 
 export TMUX_HOME="$HOME/.config/tmux"
