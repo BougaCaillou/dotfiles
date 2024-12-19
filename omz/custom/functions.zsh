@@ -29,9 +29,9 @@ yl () {
   fi
 }
 
-# "pgcli local", aka connect to local postgres
+# "pgcli local", aka connect to local postgres (password is hardcoded because I use the default one locally)
 pgcl () {
-  pgcli postgres://postgres:$PGPWDL@localhost:5432/postgres
+  pgcli postgres://postgres:mysecretpassword@localhost:5432/postgres
 }
 
 # "psql local", aka execute a sql script on local postgres
@@ -47,12 +47,12 @@ psqll () {
     return 2
   fi
 
-  PGPASSWORD=$PGPWDL psql -h localhost -p 5432 -U postgres postgres -f $1
+  psql postgres://postgres:mysecretpassword@localhost:5432/postgres -f $1
 }
 
 # "pgcli test", aka connect to test postgres
 pgct () {
-  pgcli postgres://usermanagement:$PGPWDT@localhost:39021/usermanagement
+  pgcli $(bastion db-uri test21-cluster usermanagement)
 }
 
 # "psql test", aka execute a sql script on test postgres
@@ -68,7 +68,30 @@ psqlt () {
     return 2
   fi
 
-  PGPASSWORD=$PGPWDT psql -h localhost -p 39021 -U usermanagement usermanagement -f $1
+  psql $(bastion db-uri test21-cluster usermanagement) -f $1
+}
+
+# "pgcli prod", aka connect to prod postgres
+# Use with caution
+pgcp () {
+  pgcli $(bastion db-uri prod21-cluster usermanagement)
+}
+
+# "psql prod", aka execute a sql script on prod postgres
+# Use with caution
+psqlp () {
+  if [[ $# -ne 1 ]]; then
+    echo "USAGE: psqlp file.sql"
+    return 1
+  fi
+
+  find $1 2>/dev/null
+  if [[ $? -ne 0 ]]; then
+    echo "Error while trying to read sql script '$1'"
+    return 2
+  fi
+
+  psql $(bastion db-uri prod21-cluster usermanagement) -f $1
 }
 
 # Out the curren week number
@@ -191,7 +214,7 @@ gccb() {
 
 # Prints a local postgresql connection string (useful when using mermerd to generate erd diagrams)
 ldb() {
-  echo "postgres://postgres:$PGPWDL@localhost:5432/postgres"
+  echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
 }
 
 v() {
