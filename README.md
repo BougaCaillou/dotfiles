@@ -45,3 +45,4 @@ for i in `\ls -d -1 ~/repos/dotfiles/omz/plugins/*`; do ln -s $i ~/.oh-my-zsh/cu
   - then using bastion to build the connection string (using `bastion db-uri <env> <db>` function)
   - build a completion for this (probably when fish shell is used, because it is easier to do than with zsh)
 - Aerospace setup when ?
+- Podman looks sick
