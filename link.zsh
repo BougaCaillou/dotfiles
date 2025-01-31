@@ -23,6 +23,7 @@ while getopts "f" opt; do
   esac
 done
 
+# Initialize variables
 src=""
 dst=""
 
