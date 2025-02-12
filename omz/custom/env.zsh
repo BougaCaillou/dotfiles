@@ -22,6 +22,8 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools:$ANDROID_HOME/platform-tools:$PATH";
 
+# Java stuff
+source ~/.asdf/plugins/java/set-java-home.zsh
 export JAVA_ROOT=/Library/Java/JavaVirtualMachines
 
 # libpq (postgre utils)
