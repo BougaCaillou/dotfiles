@@ -82,6 +82,7 @@
         "eth-p/software/bat-extras"
         "postgresql@17"
         "maven"
+        "imagemagick"
       ];
     };
   in
