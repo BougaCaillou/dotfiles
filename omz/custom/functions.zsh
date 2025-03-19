@@ -21,11 +21,16 @@ path() {
 
 # "pgcli local", aka connect to local postgres
 pgcl () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc local\" instead\033[0m"
   pgcli postgres://postgres:mysecretpassword@localhost:5432/postgres
 }
 
 # "psql local", aka execute a sql script on local postgres
 psqll () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc local script.sql\" instead\033[0m"
+
   if [[ $# -ne 1 ]]; then
     echo "USAGE: psqll file.sql"
     return 1
@@ -132,6 +137,7 @@ gccb() {
 
 # Prints a local postgresql connection string (useful when using mermerd to generate erd diagrams)
 ldb() {
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc -s local\" instead\033[0m"
   echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
 }
 
