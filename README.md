@@ -16,10 +16,12 @@ make
 
 ## TODO
 
+- Rewrite nvim config (because it is a mess)
+  - Either a config based on neovim kickstart or Lazyvim
+  - Re add keymaps (and remove the unused ones)
 - Fish shell
 - Nu shell
 - Tmux yank
-- Add other configurations i might have forgotten (recently added bat and wezterm for example)
 - Function to connect to a db
   - using a conf file (at XDG home) for all options
     - specifying which client to use (psql, pgcli, ...)
