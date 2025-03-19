@@ -19,6 +19,7 @@
         pkgs.vim
         pkgs.stow
         pkgs.mcfly
+        pkgs.cargo
         pkgs.curlie
         pkgs.k9s
         pkgs.dust
