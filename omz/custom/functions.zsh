@@ -227,3 +227,32 @@ rebuild() {
   exec zsh
 }
 
+# Outputs a connection string for a postgres db of a given environment
+pgc() {
+  if [[ $# -ne 1 ]]; then
+    echo "USAGE: pgc <environment>"
+    return 1
+  fi
+
+  case $1 in
+    local)
+      echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
+      ;;
+    test-eu)
+      echo $(bastion db-uri test21-cluster usermanagement)
+      ;;
+    preprod-eu) # this one is crazy i know
+      echo $(bastion db-uri preprod-eu usermanagement | sed -r 's/1/39051/' | sed -r 's/(usermanagement)/\1-preprod/g')
+      ;;
+    prod-eu)
+      echo $(bastion db-uri prod21-cluster usermanagement)
+      ;;
+    prod-us)
+      echo $(bastion db-uri prod23-us-cluster usermanagement | sed -r 's/localhost:1/localhost:39101/')
+      ;;
+    *)
+      echo "Unknown environment '$1'"
+      return 2
+      ;;
+  esac
+}
