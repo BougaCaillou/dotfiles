@@ -31,11 +31,16 @@ yl () {
 
 # "pgcli local", aka connect to local postgres (password is hardcoded because I use the default one locally)
 pgcl () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc local\" instead\033[0m"
   pgcli postgres://postgres:mysecretpassword@localhost:5432/postgres
 }
 
 # "psql local", aka execute a sql script on local postgres
 psqll () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc local script.sql\" instead\033[0m"
+
   if [[ $# -ne 1 ]]; then
     echo "USAGE: psqll file.sql"
     return 1
@@ -52,11 +57,15 @@ psqll () {
 
 # "pgcli test", aka connect to test postgres
 pgct () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc test-eu\" instead\033[0m"
   pgcli $(bastion db-uri test21-cluster usermanagement)
 }
 
 # "psql test", aka execute a sql script on test postgres
 psqlt () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc test-eu script.sql\" instead\033[0m"
   if [[ $# -ne 1 ]]; then
     echo "USAGE: psqlt file.sql"
     return 1
@@ -74,12 +83,16 @@ psqlt () {
 # "pgcli prod", aka connect to prod postgres
 # Use with caution
 pgcp () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc prod-eu\" instead\033[0m"
   pgcli $(bastion db-uri prod21-cluster usermanagement)
 }
 
 # "psql prod", aka execute a sql script on prod postgres
 # Use with caution
 psqlp () {
+  # yellow warning message saying this is deprecated and should be replaced with pgc
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc prod-eu script.sql\" instead\033[0m"
   if [[ $# -ne 1 ]]; then
     echo "USAGE: psqlp file.sql"
     return 1
@@ -214,6 +227,7 @@ gccb() {
 
 # Prints a local postgresql connection string (useful when using mermerd to generate erd diagrams)
 ldb() {
+  echo -e "\033[33mThis function is deprecated, you should use \"pgc -s local\" instead\033[0m"
   echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
 }
 
@@ -229,30 +243,110 @@ rebuild() {
 
 # Outputs a connection string for a postgres db of a given environment
 pgc() {
-  if [[ $# -ne 1 ]]; then
-    echo "USAGE: pgc <environment>"
+  if [[ $# -lt 1 || $# -gt 3 ]]; then
+    echo "USAGE: pgc [-s] <environment>"
     return 1
   fi
 
-  case $1 in
+  local silent=false
+  local env=""
+  local script=""
+
+  # Parse optional -s flag
+  if [[ "$1" == "-s" ]]; then
+    if [[ $# -ne 2 ]]; then
+      echo "Silent mode can be called with 2 arguments only"
+      echo "USAGE: pgc [-s] <environment>"
+      return 1
+    fi
+    silent=true
+    env="$2"
+  else
+    env="$1"
+  fi
+
+  # Optional script argument
+  if [[ -n $2 && $silent == false ]]; then
+    find $2 >/dev/null
+    if [[ $? -ne 0 ]]; then
+      echo "Error while trying to read sql script '$2' (see above)"
+      return 2
+    fi
+    script="$2"
+  fi
+
+  local context="" # context for kubectx
+  local user="postgres"
+  local password=""
+  local host="REDACTED_PROXY_URL"
+  local port=""
+  local db="usermanagement"  # default, overridden in some cases
+
+  case $env in
     local)
-      echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
+      password="mysecretpassword"
+      host="localhost"
+      port="5432"
+      db="postgres"
       ;;
     test-eu)
-      echo $(bastion db-uri test21-cluster usermanagement)
+      context="test21-cluster"
+      port="9000"
       ;;
-    preprod-eu) # this one is crazy i know
-      echo $(bastion db-uri preprod-eu usermanagement | sed -r 's/1/39051/' | sed -r 's/(usermanagement)/\1-preprod/g')
+    preprod-eu)
+      context="preprod-eu"
+      port="9100"
       ;;
     prod-eu)
-      echo $(bastion db-uri prod21-cluster usermanagement)
+      context="prod21-cluster"
+      port="9101"
       ;;
     prod-us)
-      echo $(bastion db-uri prod23-us-cluster usermanagement | sed -r 's/localhost:1/localhost:39101/')
+      context="prod23-us-cluster"
+      port="9102"
       ;;
     *)
-      echo "Unknown environment '$1'"
-      return 2
+      echo "Unknown environment '$env'"
+      return 3
       ;;
   esac
+
+  # Setting the variable that can be fetched using kubectl contexts. The appropriate context was set above so this is the same regardless of the env argument
+  # Note: not needed for local
+  if [[ -n $context ]]; then
+    local current_context=$(kubectl config current-context)
+
+    if [[ $current_context != $context ]]; then
+      echo "Requested env needs context switching, you are going to be switched around..."
+      kubectx $context
+    fi
+
+    for i in `k get cm user-management-api-config -o json | jq '.data | with_entries(select(.key | match("DATABASE_(NAME|USER)"))) | to_entries | .[] | .key + "=" + (.value)'`; do
+      eval "local $i"
+    done
+
+    password=$(kubectl get secret user-management-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode)
+    db=${DATABASE_NAME:-$db}
+    user=${DATABASE_USER:-$user}
+
+    if [[ $current_context != $context && $silent == true ]]; then
+      echo "Silent mode, reverting back to previous context..."
+      kubectx $current_context
+    fi
+  fi
+
+  local conn_str="postgres://${user}:${password}@${host}:${port}/${db}"
+
+  if $silent; then
+    echo "$conn_str"
+  else
+    if [[ -n $script ]]; then
+      echo "Executing script '$script' on $conn_str"
+      # psql "$conn_str" -f $script
+    else
+      pgcli "$conn_str"
+    fi
+  fi
 }
+
+
