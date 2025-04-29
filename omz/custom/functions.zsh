@@ -341,8 +341,8 @@ pgc() {
     echo "$conn_str"
   else
     if [[ -n $script ]]; then
-      echo "Executing script '$script' on $conn_str"
-      # psql "$conn_str" -f $script
+      echo "Executing script '$script' on $env env..."
+      psql "$conn_str" -f $script
     else
       pgcli "$conn_str"
     fi
