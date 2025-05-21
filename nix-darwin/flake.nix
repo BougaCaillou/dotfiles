@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -17,8 +17,6 @@
       # Package search: https://search.nixos.org/packages?channel=24.11&from=0&size=50&sort=relevance&type=packages
       environment.systemPackages = [
         pkgs.vim
-        pkgs.stow
-        pkgs.mcfly
         pkgs.cargo
         pkgs.curlie
         pkgs.k9s
@@ -34,6 +32,7 @@
         pkgs.helmfile
         pkgs.jq
         pkgs.kubectx
+        pkgs.lazydocker
         pkgs.lolcat # of course
         pkgs.gnumake
         pkgs.neovim
@@ -49,10 +48,6 @@
         pkgs.zx
       ];
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
-
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -62,14 +57,15 @@
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
+      # Primary user setup
+      system.primaryUser = "pierre";
+
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
-
-      security.pam.enableSudoTouchIdAuth = true;
 
       system.defaults = {
         dock.autohide = true;
