@@ -237,7 +237,7 @@ v() {
 
 # Rebuild nix profile based on my flake
 rebuild() {
-  darwin-rebuild switch --flake $DOTFILES/nix-darwin
+  sudo darwin-rebuild switch --flake $DOTFILES/nix-darwin
   exec zsh
 }
 
