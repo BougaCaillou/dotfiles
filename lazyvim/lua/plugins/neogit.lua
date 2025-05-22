@@ -28,16 +28,12 @@ return {
     },
     {
       "<leader>gd",
-      function()
-        vim.cmd("DiffviewOpen")
-      end,
+      "<cmd>DiffviewOpen<cr>",
       desc = "Neo-git diff",
     },
     {
       "<leader>gc",
-      function()
-        vim.cmd("DiffviewClose")
-      end,
+      "<cmd>DiffviewClose<cr>",
       desc = "Neo-git diff close",
     },
   },
