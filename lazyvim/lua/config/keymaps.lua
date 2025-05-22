@@ -31,15 +31,10 @@ vim.keymap.set("n", "<leader>Y", '"+Y') -- yanks the current line
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Close everything
-vim.keymap.set("n", "<leader>Q", ":qa<CR>")
+vim.keymap.set("n", "<leader>Q", ":qa<CR>", { desc = "Close all" })
 
 -- Substitute current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- Source current file
-vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd("so")
-end)
 
 -- Fold current block
 vim.keymap.set("n", "<leader>fb", "$zf%")
