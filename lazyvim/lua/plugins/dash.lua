@@ -27,7 +27,7 @@ return {
         vertical_center = true,
         -- stylua: ignore
         center = {
-          { action = 'Neotree show',                                   desc = " Open Neo-tree",   icon = devicons.get_icon('Directory.Build.targets'), key = "e" },
+          { action = 'Snacks.explorer.open()',                         desc = " Open Snack Explorer",   icon = devicons.get_icon('Directory.Build.targets'), key = "e" },
           { action = 'lua LazyVim.pick()()',                           desc = " Find File",       icon = " ", key = "f" },
           { action = "ene | startinsert",                              desc = " New File",        icon = " ", key = "n" },
           { action = 'lua LazyVim.pick("oldfiles")()',                 desc = " Recent Files",    icon = " ", key = "r" },
