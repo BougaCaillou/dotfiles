@@ -231,10 +231,6 @@ ldb() {
   echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
 }
 
-v() {
-  [ -z "$1" ] && nvim . || nvim $1
-}
-
 # Rebuild nix profile based on my flake
 rebuild() {
   sudo darwin-rebuild switch --flake $DOTFILES/nix-darwin

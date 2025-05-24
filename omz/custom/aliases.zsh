@@ -15,6 +15,7 @@ alias ls='eza -lh --git --icons --no-user'
 alias lst='eza -lh --git --icons --no-user --tree'
 alias lsat='eza -lh --git --icons --no-user --tree --all'
 alias ez='exec zsh'
+alias v="nvim"
 
 # Aliases to manage project (mostly make commands)
 alias mc="make clean"
