@@ -29,7 +29,6 @@
         pkgs.glow
         pkgs.go
         pkgs.gum
-        pkgs.helmfile
         pkgs.jq
         pkgs.kubectx
         pkgs.lazydocker
