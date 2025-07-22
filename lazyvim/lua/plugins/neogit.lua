@@ -1,5 +1,6 @@
 return {
   "NeogitOrg/neogit",
+  priority = 1000,
   lazy = false,
   dependencies = {
     "nvim-lua/plenary.nvim", -- required
@@ -8,7 +9,7 @@ return {
     -- Only one of these is needed.
     -- "nvim-telescope/telescope.nvim", -- optional
     -- "ibhagwan/fzf-lua",              -- optional
-    -- "echasnovski/mini.pick", -- optional
+    "echasnovski/mini.pick", -- optional
     -- "folke/snacks.nvim", -- optional
   },
   opts = {
@@ -19,23 +20,14 @@ return {
     kind = "split_below_all",
     progress_spinner = true,
   },
-  keys = {
-    {
-      "<leader>gs",
-      function()
-        require("neogit").open()
-      end,
-      desc = "Neo-git status",
-    },
-    {
-      "<leader>gd",
-      "<cmd>DiffviewOpen<cr>",
-      desc = "Neo-git diff",
-    },
-    {
-      "<leader>gc",
-      "<cmd>DiffviewClose<cr>",
-      desc = "Neo-git diff close",
-    },
-  },
+  config = function(_, opts)
+    require("neogit").setup(opts)
+
+    vim.keymap.del("n", "<leader>gs")
+    vim.keymap.set("n", "<leader>gs", function()
+      require("neogit").open()
+    end, { desc = "Neogit status" })
+    vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Neogit diff" })
+    vim.keymap.set("n", "<leader>gc", "<cmd>DiffviewClose<cr>", { desc = "Neogit diff close" })
+  end,
 }

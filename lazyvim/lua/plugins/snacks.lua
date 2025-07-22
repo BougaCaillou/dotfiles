@@ -1,10 +1,8 @@
 return {
   "folke/snacks.nvim",
+  priority = 1000,
   lazy = false,
   opts = {
-    git = {
-      enabled = false,
-    },
     picker = {
       enabled = true,
       sources = {
