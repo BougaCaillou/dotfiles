@@ -73,12 +73,17 @@
       };
 
       homebrew.enable = true;
+      homebrew.taps = [
+        "silenceper/tap"
+      ];
       homebrew.brews = [
         "asdf"
         "eth-p/software/bat-extras"
         "postgresql@17"
         "maven"
         "imagemagick"
+        "gowatch"
+        "yq"
       ];
     };
   in
