@@ -16,6 +16,7 @@
       # $ nix-env -qaP | grep wget
       # Package search: https://search.nixos.org/packages?channel=24.11&from=0&size=50&sort=relevance&type=packages
       environment.systemPackages = [
+        pkgs.atuin
         pkgs.vim
         pkgs.cargo
         pkgs.curlie
@@ -29,11 +30,15 @@
         pkgs.glow
         pkgs.go
         pkgs.gum
+        pkgs.imgcat
         pkgs.jq
         pkgs.kubectx
         pkgs.lazydocker
         pkgs.lolcat # of course
         pkgs.gnumake
+        pkgs.gnupg1
+        pkgs.jqp
+        pkgs.mongosh
         pkgs.neovim
         pkgs.pgcli
         pkgs.procs
