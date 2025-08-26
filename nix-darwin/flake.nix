@@ -89,6 +89,7 @@
         "imagemagick"
         "gowatch"
         "yq"
+        "git-filter-repo"
       ];
     };
   in

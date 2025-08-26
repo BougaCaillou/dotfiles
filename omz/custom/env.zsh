@@ -12,9 +12,6 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 # Preffered editor for broot
 export EDITOR=nvim
 
-# Widget demo page
-export REDACTED_WIDGET_URL=http://localhost:8080
-
 # User management env var
 export APP_STORE_ENVIRONMENT="sandbox"
 
