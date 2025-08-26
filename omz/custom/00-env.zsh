@@ -1,3 +1,4 @@
+# Clean slate for PATH
 PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin";
 
 export DOTFILES="$HOME/repos/dotfiles"
