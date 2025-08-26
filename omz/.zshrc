@@ -115,6 +115,9 @@ eval "$(starship init zsh)"
 # Zoxide setup
 eval "$(zoxide init zsh)"
 
+# Atuin init
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # ZSH plugins sourcing
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
