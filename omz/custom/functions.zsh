@@ -19,7 +19,7 @@ path() {
 	echo $PATH | tr ':' '\n'
 }
 
-# "pgcli local", aka connect to local postgres
+# "pgcli local", aka connect to local postgres (password is hardcoded because I use the default one locally)
 pgcl () {
   # yellow warning message saying this is deprecated and should be replaced with pgc
   echo -e "\033[33mThis function is deprecated, you should use \"pgc local\" instead\033[0m"
