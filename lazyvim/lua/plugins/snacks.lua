@@ -3,7 +3,15 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    git = {
+      enabled = false,
+    },
     picker = {
+      win = {
+        backdrop = {
+          transparent = true,
+        },
+      },
       enabled = true,
       sources = {
         explorer = {
@@ -26,6 +34,9 @@ return {
             },
           },
           win = {
+            backdrop = {
+              transparent = true,
+            },
             list = {
               keys = {
                 ["<C-h>"] = "tmux_pane_left",
