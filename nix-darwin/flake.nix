@@ -39,7 +39,6 @@
         pkgs.gnupg1
         pkgs.jqp
         pkgs.mongosh
-        pkgs.neovim
         pkgs.pgcli
         pkgs.procs
         pkgs.starship
