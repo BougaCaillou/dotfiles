@@ -70,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl docker helm aliases asdf web-search)
+plugins=(git kubectl docker docker-compose helm aliases asdf web-search)
 
 source $ZSH/oh-my-zsh.sh
 
