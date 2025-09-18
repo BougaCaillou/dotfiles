@@ -39,9 +39,11 @@
         pkgs.gnupg1
         pkgs.jqp
         pkgs.mongosh
+        pkgs.libxml2
         pkgs.pgcli
         pkgs.procs
         pkgs.starship
+        pkgs.termscp
         pkgs.tldr
         pkgs.tmux
         pkgs.tree
