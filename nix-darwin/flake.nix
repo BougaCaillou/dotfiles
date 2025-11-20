@@ -40,6 +40,8 @@
         pkgs.jqp
         pkgs.mongosh
         pkgs.libxml2
+        pkgs.gtop
+        pkgs.php
         pkgs.pgcli
         pkgs.procs
         pkgs.starship
@@ -91,6 +93,7 @@
         "gowatch"
         "yq"
         "git-filter-repo"
+        "golang-migrate"
       ];
     };
   in
