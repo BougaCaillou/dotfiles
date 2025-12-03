@@ -26,7 +26,7 @@
         pkgs.fd
         pkgs.fzf
         pkgs.git
-        pkgs.gnused
+        # pkgs.gnused
         pkgs.glow
         pkgs.go
         pkgs.gum
@@ -91,7 +91,8 @@
         "maven"
         "imagemagick"
         "gowatch"
-        "yq"
+        # "yq"
+        "python-yq"
         "git-filter-repo"
         "golang-migrate"
       ];
