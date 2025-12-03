@@ -36,9 +36,6 @@ vim.keymap.set("n", "<leader>Q", ":qa<CR>", { desc = "Close all" })
 -- Substitute current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Fold current block
-vim.keymap.set("n", "<leader>fb", "$zf%")
-
 -- Indent line in normal and visual mode
 vim.keymap.set("n", "<S-h>", "<<")
 vim.keymap.set("n", "<S-l>", ">>")
