@@ -110,8 +110,8 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # Atuin init
-export PATH="$PATH:/home/LordBazzite/.atuin/bin"
-eval "$(atuin init zsh)"
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # ZSH plugins sourcing
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -121,4 +121,3 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . $(brew --prefix asdf)/libexec/asdf.sh
 
 
-. "$HOME/.atuin/bin/env"
