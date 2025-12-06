@@ -210,5 +210,3 @@
 [delta "interactive"]
 	keep-plus-minus-markers = true
 
-[interactive]
-	diffFilter = delta --color-only

@@ -100,14 +100,8 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
-
 # Homebrew stuff
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -116,7 +110,8 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # Atuin init
-eval "$(atuin init zsh --disable-up-arrow)"
+export PATH="$PATH:/home/LordBazzite/.atuin/bin"
+eval "$(atuin init zsh)"
 
 # ZSH plugins sourcing
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -125,3 +120,5 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # asdf shenanigans
 . $(brew --prefix asdf)/libexec/asdf.sh
 
+
+. "$HOME/.atuin/bin/env"
