@@ -92,6 +92,7 @@
         "imagemagick"
         "gowatch"
         # "yq"
+        "gnu-sed"
         "python-yq"
         "git-filter-repo"
         "golang-migrate"

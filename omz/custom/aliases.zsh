@@ -17,6 +17,7 @@ alias lsat='eza -lh --git --icons --no-user --tree --all'
 alias ez='exec zsh'
 alias v="nvim"
 alias mines="bash $HOME/repos/tui-mines/tui-mines.sh"
+alias sed="gsed" # demonic alias
 
 # Aliases to manage project (mostly make commands)
 alias mc="make clean"
