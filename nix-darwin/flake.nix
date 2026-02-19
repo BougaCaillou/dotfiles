@@ -19,6 +19,7 @@
         pkgs.atuin
         pkgs.vim
         pkgs.cargo
+        pkgs.csvlens
         pkgs.curlie
         pkgs.k9s
         pkgs.dust
