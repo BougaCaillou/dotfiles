@@ -110,7 +110,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # Atuin init
-. "$HOME/.atuin/bin/env"
+#. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # ZSH plugins sourcing

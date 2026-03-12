@@ -33,15 +33,15 @@ PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/custom-tools:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
+export BAT_THEME="Catppuccin Macchiato"
+
 export TMUX_HOME="$HOME/.config/tmux"
 
 export PROJECTS_DIR="$HOME/repos"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-PATH="/run/current-system/sw/bin:$PATH"
-export NIX_CONF_DIR="$DOTFILES/nix-darwin"
-PATH="/nix/var/nix/profiles/default/bin:$PATH"
+export SEAFILE_DIR="$HOME/Seafile"
 
 export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
