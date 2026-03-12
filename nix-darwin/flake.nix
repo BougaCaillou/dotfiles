@@ -47,7 +47,7 @@
         pkgs.procs
         pkgs.starship
         pkgs.termscp
-        pkgs.tldr
+        pkgs.tlrc
         pkgs.tmux
         pkgs.tree
         pkgs.zoxide
