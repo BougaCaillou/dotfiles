@@ -47,5 +47,8 @@ export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
 PATH="$HOME/.meteor:$PATH"
 
+# Xcode bin
+PATH="/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH"
+
 export PATH;
 
