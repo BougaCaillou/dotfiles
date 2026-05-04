@@ -21,7 +21,6 @@
         pkgs.cargo
         pkgs.csvlens
         pkgs.curlie
-        pkgs.k9s
         pkgs.dust
         pkgs.eza
         pkgs.fd
@@ -97,6 +96,7 @@
         "python-yq"
         "git-filter-repo"
         "golang-migrate"
+        "k9s"
       ];
     };
   in
