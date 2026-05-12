@@ -19,8 +19,8 @@
         pkgs.atuin
         pkgs.vim
         pkgs.cargo
+        pkgs.csvlens
         pkgs.curlie
-        pkgs.k9s
         pkgs.dust
         pkgs.eza
         pkgs.fd
@@ -46,7 +46,7 @@
         pkgs.procs
         pkgs.starship
         pkgs.termscp
-        pkgs.tldr
+        pkgs.tlrc
         pkgs.tmux
         pkgs.tree
         pkgs.zoxide
@@ -92,9 +92,11 @@
         "imagemagick"
         "gowatch"
         # "yq"
+        "gnu-sed"
         "python-yq"
         "git-filter-repo"
         "golang-migrate"
+        "k9s"
       ];
     };
   in
