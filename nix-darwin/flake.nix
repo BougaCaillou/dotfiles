@@ -26,6 +26,8 @@
         pkgs.fd
         pkgs.fzf
         pkgs.git
+        pkgs.gitlab-runner
+        pkgs.glab
         # pkgs.gnused
         pkgs.glow
         pkgs.go
@@ -35,6 +37,7 @@
         pkgs.kubectx
         pkgs.lazydocker
         pkgs.lolcat # of course
+        pkgs.neovim
         pkgs.gnumake
         pkgs.gnupg1
         pkgs.jqp
@@ -45,7 +48,7 @@
         pkgs.pgcli
         pkgs.procs
         pkgs.starship
-        pkgs.termscp
+        # pkgs.termscp
         pkgs.tlrc
         pkgs.tmux
         pkgs.tree
