@@ -18,6 +18,7 @@ alias ez='exec zsh'
 alias v="nvim"
 alias mines="bash $HOME/repos/tui-mines/tui-mines.sh"
 alias sed="gsed" # demonic alias
+alias vc="vpn c"
 
 # Aliases to manage project (mostly make commands)
 alias mc="make clean"
