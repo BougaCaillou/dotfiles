@@ -16,6 +16,7 @@
       # $ nix-env -qaP | grep wget
       # Package search: https://search.nixos.org/packages?channel=24.11&from=0&size=50&sort=relevance&type=packages
       environment.systemPackages = [
+        pkgs.age
         pkgs.atuin
         pkgs.vim
         pkgs.cargo
@@ -48,6 +49,7 @@
         pkgs.pgcli
         pkgs.procs
         pkgs.starship
+        pkgs.sops
         # pkgs.termscp
         pkgs.tlrc
         pkgs.tmux
