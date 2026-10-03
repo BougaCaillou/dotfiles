@@ -117,7 +117,4 @@ eval "$(atuin init zsh --disable-up-arrow)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# asdf shenanigans
-. $(brew --prefix asdf)/libexec/asdf.sh
-
-
+[ -s "/home/LordBazzite/.jabba/jabba.sh" ] && source "/home/LordBazzite/.jabba/jabba.sh"

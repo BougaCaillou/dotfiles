@@ -21,8 +21,8 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools:$ANDROID_HOME/platform-tools:$PATH";
 
 # Java stuff
-source ~/.asdf/plugins/java/set-java-home.zsh
-export JAVA_ROOT=/Library/Java/JavaVirtualMachines
+# source ~/.asdf/plugins/java/set-java-home.zsh
+# export JAVA_ROOT=/Library/Java/JavaVirtualMachines
 
 # libpq (postgre utils)
 PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
@@ -30,7 +30,7 @@ PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 
 # Custom tools (one ofs, i.e. Mermerd...)
-PATH="$HOME/custom-tools:$PATH"
+PATH="$HOME/Tools/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
 export BAT_THEME="Catppuccin Macchiato"
@@ -45,6 +45,10 @@ export SEAFILE_DIR="$HOME/Seafile"
 
 export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
+# Adding asdf shims
+PATH="$HOME/.asdf/shims:$PATH"
+
+# Meteor yey
 PATH="$HOME/.meteor:$PATH"
 
 # Xcode bin
