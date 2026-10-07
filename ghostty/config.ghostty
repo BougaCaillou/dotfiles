@@ -1,0 +1,15 @@
+# Theming
+theme = Catppuccin Mocha
+background-opacity = 0.85
+font-family = "Maple Mono NF"
+
+# Keybinds
+# (tab stuff disabled because tmux)
+keybind = super+t=unbind
+keybind = super+w=unbind
+macos-option-as-alt = true
+
+# Borderless fullscreen #
+# Remove the native titlebar, rounded corners, and window chrome
+window-decoration = false
+

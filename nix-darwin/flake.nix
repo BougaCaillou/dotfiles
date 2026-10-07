@@ -28,6 +28,7 @@
         pkgs.fzf
         pkgs.git
         pkgs.gitlab-runner
+        pkgs.ghostty-bin
         pkgs.glab
         # pkgs.gnused
         pkgs.glow
