@@ -5,6 +5,7 @@
 LINKS=(
   "$DOTFILES/asdf/.asdfrc -> $HOME/.asdfrc"
   "$DOTFILES/bat -> $XDG_CONFIG_HOME/bat"
+  "$DOTFILES/ghostty -> $XDG_CONFIG_HOME/ghostty"
   "$DOTFILES/git/.gitconfig -> $HOME/.gitconfig"
   "$DOTFILES/nix -> $XDG_CONFIG_HOME/nix"
   "$DOTFILES/nvim -> $XDG_CONFIG_HOME/nvim"
