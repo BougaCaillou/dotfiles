@@ -28,7 +28,6 @@
         pkgs.fzf
         pkgs.git
         pkgs.gitlab-runner
-        pkgs.ghostty-bin
         pkgs.glab
         # pkgs.gnused
         pkgs.glow
@@ -55,6 +54,7 @@
         pkgs.tlrc
         pkgs.tmux
         pkgs.tree
+        pkgs.viu
         pkgs.zoxide
         pkgs.zsh-autosuggestions
         pkgs.zsh-syntax-highlighting
@@ -103,6 +103,9 @@
         "git-filter-repo"
         "golang-migrate"
         "k9s"
+      ];
+      homebrew.casks = [
+        "ghostty"
       ];
     };
   in
