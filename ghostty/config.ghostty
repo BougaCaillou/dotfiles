@@ -1,6 +1,6 @@
 # Theming
 theme = Catppuccin Mocha
-background-opacity = 0.85
+background-opacity = 0.9
 font-family = "Maple Mono NF"
 
 # Keybinds
@@ -12,4 +12,6 @@ macos-option-as-alt = true
 # Borderless fullscreen #
 # Remove the native titlebar, rounded corners, and window chrome
 window-decoration = false
+window-width = 9999
+window-height = 9999
 
