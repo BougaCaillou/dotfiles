@@ -7,6 +7,8 @@ LINKS=(
   "$DOTFILES/bat -> $XDG_CONFIG_HOME/bat"
   "$DOTFILES/ghostty -> $XDG_CONFIG_HOME/ghostty"
   "$DOTFILES/git/.gitconfig -> $HOME/.gitconfig"
+  "$DOTFILES/homebrew/trust.json -> $HOME/.homebrew/trust.json"
+  "$DOTFILES/homebrew/trust.json -> $XDG_CONFIG_HOME/homebrew/trust.json"
   "$DOTFILES/nix -> $XDG_CONFIG_HOME/nix"
   "$DOTFILES/nvim -> $XDG_CONFIG_HOME/nvim"
   "$DOTFILES/omz/.zshrc -> $HOME/.zshrc"

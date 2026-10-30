@@ -32,6 +32,7 @@
         # pkgs.gnused
         pkgs.glow
         pkgs.go
+        pkgs.go-task
         pkgs.gum
         pkgs.imgcat
         pkgs.jq
@@ -92,14 +93,14 @@
       ];
       homebrew.brews = [
         "asdf"
-        "eth-p/software/bat-extras"
+        # "eth-p/software/bat-extras"
         "postgresql@17"
         "maven"
         "imagemagick"
         "gowatch"
-        # "yq"
+        "yq"
         "gnu-sed"
-        "python-yq"
+        # "python-yq"
         "git-filter-repo"
         "golang-migrate"
         "k9s"
