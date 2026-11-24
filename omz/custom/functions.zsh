@@ -44,6 +44,37 @@ gccb() {
   echo -n $(gb | rg '\*' | cut -d ' ' -f 2) | pbcopy
 }
 
+# Checks if a port is listened to, by the system and/or by a docker container (reported independently)
+# Exit code: 0 if either listens, 1 if neither
+portcheck() {
+  if [[ $# -ne 1 ]]; then
+    echo "USAGE: portcheck <port>"
+    return 2
+  fi
+
+  local sys docker_out found=1
+  sys=$(lsof -nP -iTCP:$1 -sTCP:LISTEN 2>/dev/null | tail -n +2)
+  docker_out=$(docker ps --filter "publish=$1" --format '{{.Names}} ({{.Ports}})' 2>/dev/null)
+
+  if [[ -n $sys ]]; then
+    echo "system: listened"
+    echo "$sys" | awk '{print "  " $1 " (pid " $2 ")"}'
+    found=0
+  else
+    echo "system: free"
+  fi
+
+  if [[ -n $docker_out ]]; then
+    echo "docker: listened"
+    echo "$docker_out" | sed 's/^/  /'
+    found=0
+  else
+    echo "docker: free"
+  fi
+
+  return $found
+}
+
 # Rebuild nix profile based on my flake
 rebuild() {
   sudo darwin-rebuild switch --flake $DOTFILES/nix-darwin
