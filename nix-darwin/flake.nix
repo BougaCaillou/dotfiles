@@ -46,6 +46,8 @@
         pkgs.mongosh
         pkgs.libxml2
         pkgs.gtop
+        pkgs.ripgrep
+        pkgs.delta
         pkgs.php
         pkgs.pgcli
         pkgs.procs
