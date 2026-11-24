@@ -19,100 +19,9 @@ path() {
 	echo $PATH | tr ':' '\n'
 }
 
-# "pgcli local", aka connect to local postgres (password is hardcoded because I use the default one locally)
-pgcl () {
-  # yellow warning message saying this is deprecated and should be replaced with pgc
-  echo -e "\033[33mThis function is deprecated, you should use \"pgc local\" instead\033[0m"
-  pgcli postgres://postgres:mysecretpassword@localhost:5432/postgres
-}
-
-# "psql local", aka execute a sql script on local postgres
-psqll () {
-  # yellow warning message saying this is deprecated and should be replaced with pgc
-  echo -e "\033[33mThis function is deprecated, you should use \"pgc local script.sql\" instead\033[0m"
-
-  if [[ $# -ne 1 ]]; then
-    echo "USAGE: psqll file.sql"
-    return 1
-  fi
-
-  find $1 2>/dev/null
-  if [[ $? -ne 0 ]]; then
-    echo "Error while trying to read sql script '$1'"
-    return 2
-  fi
-
-  psql postgres://postgres:mysecretpassword@localhost:5432/postgres -f $1
-}
-
 # Out the curren week number
 week () {
   date +%V
-}
-
-# Various functions to manage projects (mostly make commands)
-cli() {
-  make clean
-  make install
-}
-clir() {
-  make clean
-  make install
-  make run
-}
-clib() {
-  make clean
-  make install
-  make build
-}
-clibt() {
-  make clean
-  make install
-  make build-test
-}
-clp () {
-  make clean
-  make prepare
-}
-clpr () {
-  make clean
-  make prepare
-  make run
-}
-clpb () {
-  make clean
-  make prepare
-  make build
-}
-clpbt () {
-  make clean
-  make prepare
-  make build-test
-}
-
-mir () {
-  make install
-  make run
-}
-mib () {
-  make install
-  make build
-}
-mibt () {
-  make install
-  make build-test
-}
-mpr () {
-  make prepare
-  make run
-}
-mpb () {
-  make prepare
-  make build
-}
-mpbt () {
-  make prepare
-  make build-test
 }
 
 # Function to vi into whatever using which
@@ -133,12 +42,6 @@ see() {
 
 gccb() {
   echo -n $(gb | rg '\*' | cut -d ' ' -f 2) | pbcopy
-}
-
-# Prints a local postgresql connection string (useful when using mermerd to generate erd diagrams)
-ldb() {
-  echo -e "\033[33mThis function is deprecated, you should use \"pgc -s local\" instead\033[0m"
-  echo "postgres://postgres:mysecretpassword@localhost:5432/postgres"
 }
 
 # Rebuild nix profile based on my flake
